@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gemini Chatbot & Multimodal Playground</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- ==== CHATBOT ==== -->
+      <div class="chat-card">
+        <header class="chat-header">
+          <div class="chat-title">
+            <div class="logo-circle">G</div>
+            <div>
+              <h1>Gemini Chatbot</h1>
+              <p>Asisten AI untuk belajar & bertanya</p>
+            </div>
+          </div>
+          <button id="clear-btn" class="ghost-btn">Bersihkan</button>
+        </header>
+
+        <main id="messages" class="chat-messages">
+          <div class="message bot">
+            <div class="avatar bot-avatar">G</div>
+            <div class="bubble">
+              <p>Hai! 👋 Aku Gemini. Silakan tanya apa saja ✨</p>
+            </div>
+          </div>
+        </main>
+
+        <footer class="chat-input-area">
+          <div id="status" class="status-text"></div>
+
+          <form id="chat-form" class="input-row">
+            <textarea
+              id="message-input"
+              rows="1"
+              placeholder="Ketik pesanmu... (Enter untuk kirim, Shift+Enter untuk baris baru)"
+            ></textarea>
+            <button type="submit" id="send-btn" class="primary-btn">
+              Kirim
+            </button>
+          </form>
+
+          <p class="hint-text">
+            Dibangun dengan <span>Gemini API</span> · demo lokal
+          </p>
+        </footer>
+      </div>
+
+      <!-- ==== MULTIMODAL PLAYGROUND ==== -->
+      <div class="playground-grid">
+        <!-- TEXT -->
+        <section class="tool-card">
+          <h2>Tes Teks</h2>
+          <p class="tool-desc">
+            Kirim prompt sederhana ke endpoint <code>/generate-text</code>.
+          </p>
+          <form id="text-tool-form" class="tool-form">
+            <textarea
+              id="text-tool-input"
+              rows="3"
+              placeholder="Contoh: Jelaskan apa itu Gemini API dengan bahasa sederhana."
+            ></textarea>
+            <button type="submit" class="primary-btn small-btn">
+              Kirim Prompt
+            </button>
+          </form>
+          <pre id="text-tool-result" class="tool-result"></pre>
+        </section>
+
+        <!-- IMAGE -->
+        <section class="tool-card">
+          <h2>Gambar ➜ Teks</h2>
+          <p class="tool-desc">
+            Upload gambar + prompt ke <code>/generate-from-image</code>.
+          </p>
+          <form
+            id="image-tool-form"
+            class="tool-form"
+            enctype="multipart/form-data"
+          >
+            <input
+              type="text"
+              id="image-tool-prompt"
+              placeholder="Contoh: Jelaskan isi gambar ini."
+            />
+            <input type="file" id="image-tool-file" accept="image/*" />
+            <button type="submit" class="primary-btn small-btn">
+              Kirim Gambar
+            </button>
+          </form>
+          <pre id="image-tool-result" class="tool-result"></pre>
+        </section>
+
+        <!-- DOCUMENT -->
+        <section class="tool-card">
+          <h2>Dokumen ➜ Ringkasan</h2>
+          <p class="tool-desc">
+            Upload PDF/DOCX/TXT ke <code>/generate-from-document</code>.
+          </p>
+          <form
+            id="doc-tool-form"
+            class="tool-form"
+            enctype="multipart/form-data"
+          >
+            <input
+              type="text"
+              id="doc-tool-prompt"
+              placeholder="Contoh: Tolong ringkas dokumen ini (opsional)."
+            />
+            <input type="file" id="doc-tool-file" />
+            <button type="submit" class="primary-btn small-btn">
+              Kirim Dokumen
+            </button>
+          </form>
+          <pre id="doc-tool-result" class="tool-result"></pre>
+        </section>
+
+        <!-- AUDIO -->
+        <section class="tool-card">
+          <h2>Audio ➜ Transkrip</h2>
+          <p class="tool-desc">
+            Upload audio ke <code>/generate-from-audio</code>.
+          </p>
+          <form
+            id="audio-tool-form"
+            class="tool-form"
+            enctype="multipart/form-data"
+          >
+            <input
+              type="text"
+              id="audio-tool-prompt"
+              placeholder="Contoh: Tolong buatkan transkrip dari rekaman berikut (opsional)."
+            />
+            <input type="file" id="audio-tool-file" accept="audio/*" />
+            <button type="submit" class="primary-btn small-btn">
+              Kirim Audio
+            </button>
+          </form>
+          <pre id="audio-tool-result" class="tool-result"></pre>
+        </section>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

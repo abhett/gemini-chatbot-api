@@ -1,0 +1,84 @@
+/* ========== PLAYGROUND GRID ========== */
+
+.playground-grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.tool-card {
+  background: rgba(15, 23, 42, 0.95);
+  border-radius: 18px;
+  border: 1px solid rgba(30, 64, 175, 0.6);
+  padding: 14px 16px 16px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.8);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tool-card h2 {
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.tool-desc {
+  font-size: 0.78rem;
+  color: #9ca3af;
+}
+
+.tool-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.tool-form textarea,
+.tool-form input[type="text"] {
+  border-radius: 10px;
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  background: rgba(15, 23, 42, 0.85);
+  padding: 6px 8px;
+  font-size: 0.8rem;
+  color: #e5e7eb;
+  outline: none;
+}
+
+.tool-form textarea::placeholder,
+.tool-form input[type="text"]::placeholder {
+  color: #6b7280;
+}
+
+.tool-form input[type="file"] {
+  font-size: 0.78rem;
+  color: #d1d5db;
+}
+
+.small-btn {
+  align-self: flex-start;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+.tool-result {
+  margin-top: 6px;
+  padding: 8px;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px dashed rgba(75, 85, 99, 0.9);
+  font-size: 0.78rem;
+  color: #e5e7eb;
+  max-height: 180px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+
+/* Responsif */
+@media (max-width: 800px) {
+  .playground-grid {
+    grid-template-columns: 1fr;
+  }
+}
