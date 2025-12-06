@@ -1,4 +1,4 @@
-# Gemini Chatbot API & Multimodal Playground
+# Gemini Chatbot 
 
 Proyek ini adalah aplikasi **Node.js + Express** dengan frontend **Vanilla JS** yang terintegrasi dengan **Google Gemini API**.  
 Aplikasi menyediakan:
